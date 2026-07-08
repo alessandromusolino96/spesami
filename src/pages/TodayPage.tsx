@@ -84,9 +84,7 @@ export function TodayPage() {
         </Card>
         <Card className="!p-3 text-center">
           <p className="mb-1 text-xs font-medium text-stone-500">Saldo</p>
-          <p className={`text-lg font-bold ${summary.balance >= 0 ? "text-income-text" : "text-expense-text"}`}>
-            {formatCurrency(summary.balance)}
-          </p>
+          <p className={`text-lg font-bold ${summary.balance >= 0 ? "text-income-text" : "text-expense-text"}`}>{formatCurrency(summary.balance)}</p>
         </Card>
       </div>
 
@@ -99,11 +97,7 @@ export function TodayPage() {
           <EmptyState
             icon="📝"
             title={viewingToday ? "Nessun movimento oggi" : "Nessun movimento"}
-            description={
-              viewingToday
-                ? "Inserisci qui le spese e le entrate di oggi."
-                : "Non ci sono movimenti registrati per questo giorno."
-            }
+            description={viewingToday ? "Inserisci qui le spese e le entrate di oggi." : "Non ci sono movimenti registrati per questo giorno."}
             action={
               <Link to="/aggiungi" state={{ date: selectedDateISO }}>
                 <Button>{viewingToday ? "Aggiungi il primo movimento" : "Aggiungi movimento"}</Button>

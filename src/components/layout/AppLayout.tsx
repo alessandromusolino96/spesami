@@ -11,25 +11,13 @@ const rightNavItems = [
   { to: "/impostazioni", label: "Altro", icon: Settings },
 ];
 
-function NavTab({
-  to,
-  label,
-  icon: Icon,
-  end,
-}: {
-  to: string;
-  label: string;
-  icon: typeof Home;
-  end?: boolean;
-}) {
+function NavTab({ to, label, icon: Icon, end }: { to: string; label: string; icon: typeof Home; end?: boolean }) {
   return (
     <NavLink
       to={to}
       end={end}
       className={({ isActive }) =>
-        `flex flex-1 flex-col items-center gap-0.5 rounded-lg px-1 py-2 text-[10px] font-medium transition ${
-          isActive ? "text-brand-700" : "text-stone-400 hover:text-stone-600"
-        }`
+        `flex flex-1 flex-col items-center gap-0.5 rounded-lg px-1 py-2 text-[10px] font-medium transition ${isActive ? "text-brand-700" : "text-stone-400 hover:text-stone-600"}`
       }
     >
       {({ isActive }) => (

@@ -19,10 +19,7 @@ export function DashboardPage() {
   const monthRange = useMemo(() => getMonthRange(selectedMonth), [selectedMonth]);
   const canGoNext = canGoToNextMonth(selectedMonth);
 
-  const monthTransactions = useMemo(
-    () => filterByDateRange(transactions, monthRange.start, monthRange.end),
-    [transactions, monthRange.start, monthRange.end],
-  );
+  const monthTransactions = useMemo(() => filterByDateRange(transactions, monthRange.start, monthRange.end), [transactions, monthRange.start, monthRange.end]);
 
   const expenses = getTotalByType(monthTransactions, "expense");
   const income = getTotalByType(monthTransactions, "income");
@@ -78,9 +75,7 @@ export function DashboardPage() {
 
       <Card className="mb-4 !p-4">
         <p className="text-sm font-medium text-stone-500">Saldo netto del mese</p>
-        <p className={`mt-1 text-3xl font-bold ${balance >= 0 ? "text-income-text" : "text-expense-text"}`}>
-          {formatCurrency(balance)}
-        </p>
+        <p className={`mt-1 text-3xl font-bold ${balance >= 0 ? "text-income-text" : "text-expense-text"}`}>{formatCurrency(balance)}</p>
       </Card>
 
       <Card className="mb-4">

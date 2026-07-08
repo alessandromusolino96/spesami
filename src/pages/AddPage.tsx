@@ -11,13 +11,7 @@ import type { TransactionType } from "../types";
 export function AddPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const initialDate =
-    typeof location.state === "object" &&
-    location.state !== null &&
-    "date" in location.state &&
-    typeof location.state.date === "string"
-      ? location.state.date
-      : toDateInputValue();
+  const initialDate = typeof location.state === "object" && location.state !== null && "date" in location.state && typeof location.state.date === "string" ? location.state.date : toDateInputValue();
 
   const [type, setType] = useState<TransactionType>("expense");
   const [amount, setAmount] = useState("");

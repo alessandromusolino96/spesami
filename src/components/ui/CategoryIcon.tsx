@@ -22,13 +22,7 @@ export function isCategoryImage(icon: string): boolean {
 
 export function CategoryIcon({ icon, className = "", size = "md" }: CategoryIconProps) {
   if (isCategoryImage(icon)) {
-    return (
-      <img
-        src={icon}
-        alt=""
-        className={`${imageSizes[size]} object-contain ${className}`}
-      />
-    );
+    return <img src={icon} alt="" className={`${imageSizes[size]} object-contain ${className}`} />;
   }
 
   return <span className={`${emojiSizes[size]} leading-none ${className}`}>{icon}</span>;
