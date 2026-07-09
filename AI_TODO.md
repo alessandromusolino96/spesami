@@ -1,0 +1,1 @@
+- [ ] Aggiorna l'icona PWA di Spesami creandone una più coerente col progetto

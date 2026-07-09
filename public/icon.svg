@@ -1,18 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <rect width="512" height="512" rx="112" fill="#059669"/>
-  <circle cx="256" cy="256" r="160" fill="#10B981" opacity="0.35"/>
-  <path
-    d="M256 128c-70.7 0-128 57.3-128 128s57.3 128 128 128 128-57.3 128-128-57.3-128-128-128zm0 208c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z"
-    fill="white"
-    opacity="0.9"
-  />
-  <text
-    x="256"
-    y="290"
-    text-anchor="middle"
-    font-family="Inter, system-ui, sans-serif"
-    font-size="180"
-    font-weight="700"
-    fill="white"
-  >�</text>
+  <defs>
+    <linearGradient id="bg" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#047857"/>
+      <stop offset="0.55" stop-color="#059669"/>
+      <stop offset="1" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="card" x1="156" y1="148" x2="356" y2="364" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F7FDFB"/>
+    </linearGradient>
+    <filter id="shadow" x="96" y="120" width="320" height="280" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="8"/>
+      <feGaussianBlur stdDeviation="12"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.016 0 0 0 0 0.294 0 0 0 0 0.208 0 0 0 0.28 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <circle cx="400" cy="112" r="72" fill="#FFFFFF" fill-opacity="0.08"/>
+  <circle cx="96" cy="400" r="56" fill="#FFFFFF" fill-opacity="0.06"/>
+
+  <g filter="url(#shadow)">
+    <rect x="136" y="148" width="240" height="216" rx="28" fill="url(#card)"/>
+
+    <text
+      x="196"
+      y="232"
+      text-anchor="middle"
+      font-family="Inter, system-ui, sans-serif"
+      font-size="88"
+      font-weight="700"
+      fill="#047857"
+    >€</text>
+
+    <rect x="168" y="252" width="176" height="8" rx="4" fill="#E5EBE8"/>
+    <rect x="168" y="274" width="144" height="8" rx="4" fill="#E5EBE8"/>
+    <rect x="168" y="296" width="120" height="8" rx="4" fill="#E5EBE8"/>
+
+    <circle cx="320" cy="300" r="52" fill="#ECFDF5"/>
+    <path d="M320 248a52 52 0 0 1 45.03 26A52 52 0 0 1 320 352V248Z" fill="#059669"/>
+    <path d="M320 248a52 52 0 0 1 26 45.03A52 52 0 0 1 268 300h52V248Z" fill="#34D399"/>
+    <path d="M320 248a52 52 0 0 0-45.03 26A52 52 0 0 0 320 352V248Z" fill="#F59E0B" fill-opacity="0.92"/>
+
+    <circle cx="208" cy="330" r="10" fill="#F59E0B"/>
+    <circle cx="240" cy="330" r="10" fill="#3B82F6"/>
+    <circle cx="272" cy="330" r="10" fill="#8B5CF6"/>
+  </g>
 </svg>
